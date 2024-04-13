@@ -4,9 +4,7 @@
 	<name>Tate's Tiny Furniture Mod</name>
 	<author>alleZSoyez</author>
 	<supportedVersions>
-	<li>1.2</li>
-	<li>1.3</li>
-	<li>1.4</li>
+        <li>1.5</li>
 	</supportedVersions>
 	<packageId>alleZSoyez.TTFM.TatesTinyFurnitureMod</packageId>
 	<description>Okay, it's not actually that tiny. In fact, I'd even venture to say that it got way out of hand.
@@ -16,31 +14,32 @@ Special thanks to greyfade for helping with the mirror AI and other code, Neroni
 FEATURES:
 - 1x1 tables for your cramped quarters.
 - 1x1 dressers. Not as luxurious as the full size, but it does add a little something to a small bedroom.
-- 1x1 shelves, for when you just don't need a double.
 - Picnic blankets! Seats 8 and can be packed for caravans. It's not comfy, but it's better than eating off the floor. For that classic red and white look, make it out of devilstrand.
 --- Requires some sort of chair-like item facing it in order for colonists to use it. See below.
 - Sitting spot. Can be used with the picnic blanket or anywhere else you'd normally put a chair. Not comfortable, but it gets the job done.
 - Floor pillow. A stylish upgrade from sitting on the floor, but not as supportive as a proper chair.
 - Includes patch for vanilla dining chairs. Now you can build those out of stone too, because mismatched dining sets are a crime too heinous even for the rim.
-- Jade, plasteel and uranium tile for your fancy flooring needs. 
---- The tiles have been fixed to actually match the walls. I kept the original non-matching sets and renamed them to Steampunk Tiles (light and dark).
+- Jade, plasteel and uranium tile for your fancy flooring needs.
+--- These tiles have been fixed to actually match the walls. I kept the original non-matching sets and renamed them to Steampunk Tiles (light and dark).
 - Area rugs?! Yes! Build them to fit any shape or size of room. They layer over existing floors. (Requires carpet research.)
 - Tatami mats, both 1x2 and 1x3 size. They also layer over existing floors.
 - Wall mirrors! Not everyone likes them... but here they are! They'll give a minor mood boost/debuff based on the pawn's appearance. You know, because realism.
 - Outdoor lamps, because why not? They'll automatically shut off in the day to save power. Now with rain protection!
 - Quilts for single and double beds. They'll add a little comfort, but be careful! They're flammable!
 
-This should be compatible with other furniture mods, including Vanilla Furniture Expanded. I decided to give VFE's 1x1 shelf priority over this one.
-Existing shelves from THIS mod from a save will be unaffected, but to build more, you will have to use VFE's shelf.
-However, since their outdoor lamp and 1x1 table are different than mine, I decided to keep both pieces.
+This should be compatible with most other furniture mods.
+This mod used to add 1x1 shelves, but they are no longer needed as of 1.5. Existing shelves from THIS mod from a save will be unaffected, but to build more, you will have to use the official ones.
 
 Wall mirror is now compatible with GloomyFurniture's walls and smoothed stone walls.
+
+PRIOR BUILDS:
+1.5 changed a lot of code, particularly for the mirror, so this mod isn't really backwards-compatible anymore.
+If you are looking for an earlier build, I put it on GitHub here: https://github.com/alleZSoyez/rimworld_mod_TTFM/releases/tag/v1.1_to_1.4
 
 KNOWN ISSUES:
 - Rugs and mats don't yet cover plants. For best results, place on stone terrain or floors only or cut the plants away.
 - Rugs and mats also don't layer well over each other.
 - Area rugs use Custom9 LinkFlag, so they'll link with any other objects using that flag.
-- Quilt placement isn't quite perfect.
 
 DISCLAIMERS:
 - Yes, I'm pretty sure at least some of these items have been made before, and probably done better at that. I wanted to try it anyway as I'm still learning how to create mods.

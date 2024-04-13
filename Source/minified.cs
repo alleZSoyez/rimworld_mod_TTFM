@@ -59,7 +59,8 @@ namespace TatesTinyFurnitureMod
             return drawSize * num;
         }
 
-        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        // no idea why it insists on being protected now but w/e
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             if (this.crateFrontGraphic == null)
             {

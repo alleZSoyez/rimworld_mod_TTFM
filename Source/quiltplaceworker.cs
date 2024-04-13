@@ -6,6 +6,9 @@ namespace TatesTinyFurnitureMod
 {
     //************ quilts go on beds
     //************ PLEASE NOTE THAT THE QUILTS ARE ONLY MADE TO GO ON VANILLA BEDS, I MAKE NO GUARANTEES FOR MODDED BEDS, NOR CAN I DRAW CUSTOM QUILTS FOR EVERY BED
+    
+    
+    //************ begin single bed quilt
     public class PlaceWorker_TTFM_BedQuiltSingle : PlaceWorker
     {
 
@@ -28,12 +31,13 @@ namespace TatesTinyFurnitureMod
 
             if (whatIsHere != null)
             {
-                foreach (Thing here in whatIsHere)
+                foreach (Thing itemsHere in whatIsHere)
                 {
-                    if (listOfSingleBeds.Contains(here.def))
+                    if (listOfSingleBeds.Contains(itemsHere.def))
                     {
-                        getHere = map.thingGrid.ThingAt(loc, here.def);
-                        //Log.Message("found bed");
+                        getHere = map.thingGrid.ThingAt(loc, itemsHere.def);
+                        //debug
+                        //Log.Message("found bed near " + loc.ToString() + ", bed position is " + getHere.PositionHeld);
                     }
                 }
             }
@@ -42,25 +46,34 @@ namespace TatesTinyFurnitureMod
             Thing thisBed = getHere;
 
             // must be a bed here
-            if (thisBed == null)
-            {
+            if (thisBed == null) {
                 return new AcceptanceReport("TTFM_QuiltMustBeOnBed".Translate());
             }
             else
-            {
-                // quilt and bed must face the same direction
-                if (thisBed.Rotation.AsVector2 != rot.AsVector2)
-                {
-                    return new AcceptanceReport("TTFM_QuiltMustBeSameDirection".Translate());
+            { // AND the quilt must be ON THE BED, NOT THE FLOOR
+                if (loc != thisBed.PositionHeld) { 
+                    return new AcceptanceReport("TTFM_QuiltMustBeOnBed".Translate()); 
                 }
                 else
-                {
-                    return true;
+                { // AND the quilt and bed must face the same direction
+                    if (thisBed.Rotation.AsVector2 != rot.AsVector2) { 
+                        return new AcceptanceReport("TTFM_QuiltMustBeSameDirection".Translate()); 
+                    }
+                    else
+                    {  // place it now!
+                        return true;
+                    }
                 }
             }
         }
     }
 
+
+
+
+
+
+    //************ begin double bed quilt
     public class PlaceWorker_TTFM_BedQuiltDouble : PlaceWorker
     {
 
@@ -83,12 +96,13 @@ namespace TatesTinyFurnitureMod
 
             if (whatIsHere != null)
             {
-                foreach (Thing here in whatIsHere)
+                foreach (Thing itemsHere in whatIsHere)
                 {
-                    if (listOfDoubleBeds.Contains(here.def))
+                    if (listOfDoubleBeds.Contains(itemsHere.def))
                     {
-                        getHere = map.thingGrid.ThingAt(loc, here.def);
-                        //Log.Message("found bed");
+                        getHere = map.thingGrid.ThingAt(loc, itemsHere.def);
+                        //debug
+                        //Log.Message("found bed near " + loc.ToString() + ", bed position is " + getHere.PositionHeld);
                     }
                 }
             }
@@ -102,15 +116,21 @@ namespace TatesTinyFurnitureMod
                 return new AcceptanceReport("TTFM_QuiltMustBeOnBed".Translate());
             }
             else
-            {
-                // quilt and bed must face the same direction
-                if (thisBed.Rotation.AsVector2 != rot.AsVector2)
+            { // AND the quilt must be ON THE BED, NOT THE FLOOR
+                if (loc != thisBed.PositionHeld)
                 {
-                    return new AcceptanceReport("TTFM_QuiltMustBeSameDirection".Translate());
+                    return new AcceptanceReport("TTFM_QuiltMustBeOnBed".Translate());
                 }
                 else
-                {
-                    return true;
+                { // AND the quilt and bed must face the same direction
+                    if (thisBed.Rotation.AsVector2 != rot.AsVector2)
+                    {
+                        return new AcceptanceReport("TTFM_QuiltMustBeSameDirection".Translate());
+                    }
+                    else
+                    {  // place it now!
+                        return true;
+                    }
                 }
             }
         }

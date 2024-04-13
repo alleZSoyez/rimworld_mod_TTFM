@@ -67,3 +67,6 @@ G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\obj\Debug\Tate
 G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\obj\Debug\TatesTinyFurnitureMod.csprojAssemblyReference.cache
 G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\bin\Debug\UnityEngine.SubsystemsModule.dll
 G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\bin\Debug\com.rlabrecque.steamworks.net.dll
+G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\bin\Debug\Unity.Burst.dll
+G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\bin\Debug\Unity.Mathematics.dll
+G:\Steam\steamapps\common\RimWorld\Mods\TatesTinyFurniture\Source\bin\Debug\Unity.Burst.Unsafe.dll

@@ -84,12 +84,15 @@
     </comps>
   </ThingDef>
   <!--======================SHELF=======================-->
+  <!--=== as of 1.5 this item will be hidden in the build menu favor of the vanilla shelf, but remain present in the code here as to not break saves. ===-->
   <ThingDef ParentName="FurnitureWithQualityBase">
     <defName>TatesTinyFurnitureMod_Shelf</defName>
     <label>shelf (1x1)</label>
-    <description>A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside.</description>
+    <description>A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside.\n\nHowever, there's an odd note carved into this particular shelf...\n\n"Please replace this with an official one ASAP. -Tate"</description>
     <thingClass>Building_Storage</thingClass>
     <designationCategory>Furniture</designationCategory>
+    <!-- DO NOT ALLOW IT TO BE BUILT ANYMORE -->
+    <maxTechLevelToBuild>Animal</maxTechLevelToBuild>
     <graphicData>
       <texPath>alleZSoyez_TatesTinyFurniture/Shelf1x1/Shelf1x1</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -128,7 +131,7 @@
     <inspectorTabs>
       <li>ITab_Storage</li>
     </inspectorTabs>
-    <designationHotKey>Misc12</designationHotKey>
+    <!-- <designationHotKey>Misc12</designationHotKey> -->
     <staticSunShadowHeight>0.5</staticSunShadowHeight>
     <surfaceType>Item</surfaceType>
     <canOverlapZones>false</canOverlapZones>
@@ -576,14 +579,13 @@
     <comps>
       <li Class="CompProperties_Facility">
         <statOffsets>
-          <Comfort>0.05</Comfort>
+          <Comfort>1</Comfort>
         </statOffsets>
         <maxSimultaneous>1</maxSimultaneous>
-        <maxDistance>1</maxDistance>
+        <maxDistance>0</maxDistance>
       </li>
       <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>10</heatPerSecond>
+        <heatPerSecond>5</heatPerSecond>
         <heatPushMaxTemperature>10</heatPushMaxTemperature>
       </li>
     </comps>
@@ -642,14 +644,13 @@
     <comps>
       <li Class="CompProperties_Facility">
         <statOffsets>
-          <Comfort>0.05</Comfort>
+          <Comfort>1</Comfort>
         </statOffsets>
         <maxSimultaneous>1</maxSimultaneous>
-        <maxDistance>1</maxDistance>
+        <maxDistance>0</maxDistance>
       </li>
       <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>10</heatPerSecond>
+        <heatPerSecond>5</heatPerSecond>
         <heatPushMaxTemperature>10</heatPushMaxTemperature>
       </li>
     </comps>
