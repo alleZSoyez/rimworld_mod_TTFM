@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TatesTinyFurnitureMod", "TatesTinyFurnitureMod.csproj", "{88362637-C119-4574-90D7-3B2B5721865F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88362637-C119-4574-90D7-3B2B5721865F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88362637-C119-4574-90D7-3B2B5721865F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88362637-C119-4574-90D7-3B2B5721865F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88362637-C119-4574-90D7-3B2B5721865F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AC52083-4F99-403F-9EEA-F12B06C7BAE4}
+	EndGlobalSection
+EndGlobal

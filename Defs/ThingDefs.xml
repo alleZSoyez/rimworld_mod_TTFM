@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--======================TABLE=======================-->
+  <ThingDef ParentName="TableGatherSpotBase">
+    <defName>TatesTinyFurnitureMod_Table</defName>
+    <label>table (1x1)</label>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/Table1x1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>375</WorkToBuild>
+      <Mass>2</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <costStuffCount>14</costStuffCount>
+  </ThingDef>
+  <!--======================DRESSER=======================-->
+  <ThingDef ParentName="ArtableFurnitureBase">
+    <defName>TatesTinyFurnitureMod_Dresser</defName>
+    <label>dresser (1x1)</label>
+    <description>A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.</description>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/Dresser1x1/Dresser1x1</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>60</pathCost>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costStuffCount>25</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>7</Mass>
+      <WorkToBuild>1000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>3</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <designationHotKey>Misc12</designationHotKey>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.02</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  <!--======================SHELF=======================-->
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>TatesTinyFurnitureMod_Shelf</defName>
+    <label>shelf (1x1)</label>
+    <description>A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside.</description>
+    <thingClass>Building_Storage</thingClass>
+    <designationCategory>Furniture</designationCategory>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/Shelf1x1/Shelf1x1</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.5,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>15</costStuffCount>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>4</Mass>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <categories>
+            <li>Weapons</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <designationHotKey>Misc12</designationHotKey>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!--======================SIT SPOT=======================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>TatesTinyFurnitureMod_SittingSpot</defName>
+    <label>sitting spot</label>
+    <description>A designated spot to sit. That's all it is. Not comfortable. Useful for picnic blankets.</description>
+    <designationCategory>Furniture</designationCategory>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/SittingSpot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Item</altitudeLayer>
+    <passability>Standable</passability>
+    <statBases>
+      <WorkToBuild>0</WorkToBuild>
+      <Comfort>0</Comfort>
+    </statBases>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <pathCost>0</pathCost>
+    <designationHotKey>Misc7</designationHotKey>
+    <fillPercent>0.35</fillPercent>
+    <building>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <isSittable>true</isSittable>
+    </building>
+  </ThingDef>
+  <!--======================FLOOR PILLOW=======================-->
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>TatesTinyFurnitureMod_FloorPillow</defName>
+    <label>floor pillow</label>
+    <description>A cushion to sit on. Makes the lack of chair a little more bearable.</description>
+    <designationCategory>Furniture</designationCategory>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/FloorPillow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.23, 0.26, 0.23)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Mass>2.5</Mass>
+      <Flammability>1.0</Flammability>
+      <Comfort>0.4</Comfort>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <passability>Standable</passability>
+    <rotatable>false</rotatable>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>35</costStuffCount>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <techLevel>Medieval</techLevel>
+    <pathCost>1</pathCost>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.35</fillPercent>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <building>
+      <sowTag>SupportPlantsOnly</sowTag>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <isSittable>true</isSittable>
+    </building>
+  </ThingDef>
+  <!--======================PICNIC BLANKET=======================-->
+  <ThingDef Abstract="True" ParentName="FurnitureWithQualityBase" Name="TatesTinyFurnitureMod_PBBase">
+    <description>For when you just can't bring a whole table with you. Colonists won't use it unless there's a designated spot for them to sit at.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <designationCategory>Furniture</designationCategory>
+    <minifiedDef>MinifiedPicnicBlanket</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <selectable>true</selectable>
+    <castEdgeShadows>false</castEdgeShadows>
+    <pathCost>5</pathCost>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <fillPercent>0.4</fillPercent>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <canOverlapZones>false</canOverlapZones>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <techLevel>Medieval</techLevel>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <surfaceType>Eat</surfaceType>
+    <comps>
+      <li>
+        <compClass>CompGatherSpot</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="TatesTinyFurnitureMod_PBBase">
+    <defName>TatesTinyFurnitureMod_PicnicBlanket</defName>
+    <label>picnic blanket</label>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/PicnicBlanket/PicnicBlanket</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5,3.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <uiIconPath>alleZSoyez_TatesTinyFurniture/PicnicBlanket/PicnicBlanket_UI</uiIconPath>
+    <uiIconScale>1</uiIconScale>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Comfort>0.4</Comfort>
+      <Beauty>1</Beauty>
+    </statBases>
+    <rotatable>false</rotatable>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <size>(2,2)</size>
+    <costStuffCount>25</costStuffCount>
+    <costList>
+      <Cloth>25</Cloth>
+    </costList>
+    <placeWorkers>
+      <li>PlaceWorker_NeverAdjacentUnstandable</li>
+    </placeWorkers>
+    <building>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+    </building>
+  </ThingDef>
+  <!--======================TATAMI FLOORS=======================-->
+  
+<ThingDef Abstract="True" ParentName="BuildingBase" Name="TatesTinyFurnitureMod_TatamiBase">
+    <description>A flooring traditionally made of woven rice straw. In Japan, rooms are often measured by how many tatami mats can fit inside.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <designationCategory>Furniture</designationCategory>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <selectable>true</selectable>
+    <castEdgeShadows>false</castEdgeShadows>
+    <coversFloor>true</coversFloor>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <canOverlapZones>true</canOverlapZones>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+    <techLevel>Medieval</techLevel>
+</ThingDef>
+
+<ThingDef ParentName="TatesTinyFurnitureMod_TatamiBase">
+    <defName>TatesTinyFurnitureMod_1x2Tatami</defName>
+    <label>tatami mat (1x2)</label>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/TatamiFloor1x2/TatamiFloor1x2</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <Beauty>1</Beauty>
+      <Flammability>1</Flammability>
+      <WorkToBuild>400</WorkToBuild>
+    </statBases>
+    <costList>
+      <Hay>5</Hay>
+      <Cloth>2</Cloth>
+    </costList>
+    <size>(1,2)</size>
+  </ThingDef>
+
+  <ThingDef ParentName="TatesTinyFurnitureMod_TatamiBase">
+    <defName>TatesTinyFurnitureMod_1x3Tatami</defName>
+    <label>tatami mat (1x3)</label>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/TatamiFloor1x3/TatamiFloor1x3</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,3)</drawSize>
+    </graphicData>
+    <statBases>
+      <Beauty>1</Beauty>
+      <Flammability>1</Flammability>
+      <WorkToBuild>600</WorkToBuild>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+    <costList>
+      <Hay>7</Hay>
+      <Cloth>3</Cloth>
+    </costList>
+    <size>(1,3)</size>
+  </ThingDef>
+  <!--======================AREA RUG=======================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>TatesTinyFurnitureMod_AreaRug</defName>
+    <label>area rug</label>
+    <description>A simple area rug. Can be built to accomodate a space of any size.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/Linked/AreaRug/AreaRug</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Custom9</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>alleZSoyez_TatesTinyFurniture/Linked/AreaRug/AreaRug_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>25</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <Flammability>1</Flammability>
+    </statBases>
+    <costStuffCount>5</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <blockWind>false</blockWind>
+    <blockPlants>true</blockPlants>
+    <fertility>0</fertility>
+    <castEdgeShadows>false</castEdgeShadows>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>2</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Furniture</designationCategory>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <blockLight>false</blockLight>
+    <canOverlapZones>true</canOverlapZones>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <techLevel>Medieval</techLevel>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isEdifice>false</isEdifice>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+      <blueprintGraphicData>
+        <texPath>alleZSoyez_TatesTinyFurniture/Linked/AreaRug/AreaRug_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+  </ThingDef>
+  
+  <!--======================SOLAR LAMP=======================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>TatesTinyFurnitureMod_SolarLamp</defName>
+    <label>solar lamp</label>
+    <description>A decorative outdoor lamp that turns itself on at night.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <selectable>true</selectable>
+    <blockWind>false</blockWind>
+    <tickerType>Rare</tickerType>
+    <fillPercent>0.20</fillPercent>
+    <pathCost>8</pathCost>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <designationCategory>Furniture</designationCategory>
+    <rotatable>false</rotatable>
+    <uiIconOffset>(0, 0.03)</uiIconOffset>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>alleZSoyez_TatesTinyFurniture/SolarLamp</texPath>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>12</glowRadius>
+        <glowColor>(217,217,208,0)</glowColor>
+      </li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Schedule">
+        <startTime>0.7</startTime>
+        <endTime>0.25</endTime>
+        <offMessage>Off during the day.</offMessage>
+      </li>
+      <li Class="CompProperties_Power">
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>30</basePowerConsumption>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>30</MaxHitPoints>
+      <WorkToBuild>300</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Mass>2</Mass>
+    </statBases>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>SolarPanels</li>
+    </researchPrerequisites>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+  </ThingDef>
+  
+  <!--======================WALL MIRROR=======================-->
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>TatesTinyFurnitureMod_WallMirror</defName>
+    <thingClass>TatesTinyFurnitureMod.Building_Mirror_TTFM</thingClass>
+    <label>wall mirror</label>
+    <description>Mirrors are known to make a room feel a little bigger, but not everyone likes them.</description>
+    <minifiedDef>MinifiedMirror</minifiedDef>
+    <designationCategory>Furniture</designationCategory>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/WallMirror/WallMirror</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <uiIconPath>alleZSoyez_TatesTinyFurniture/WallMirror/WallMirror_UI</uiIconPath>
+    <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>3</Mass>
+      <Flammability>0</Flammability>
+      <Comfort>0.5</Comfort>
+      <Beauty>1</Beauty>
+    </statBases>
+    <passability>Standable</passability>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costList>
+      <Silver>100</Silver>
+    </costList>
+    <costStuffCount>10</costStuffCount>
+    <techLevel>Medieval</techLevel>
+    <pathCost>1</pathCost>
+    <staticSunShadowHeight>0.1</staticSunShadowHeight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.35</fillPercent>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <building>
+      <canPlaceOverWall>true</canPlaceOverWall>
+      <isEdifice>false</isEdifice>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+    </building>
+    <placeWorkers>
+      <li>TatesTinyFurnitureMod.PlaceWorker_TTFM_MirrorsOnlyOnWalls</li>
+    </placeWorkers>
+    <size>(1,1)</size>
+    <clearBuildingArea>false</clearBuildingArea>
+  </ThingDef>
+  <!--======================BED QUILT (Single)=======================-->
+<ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>TatesTinyFurnitureMod_BedQuiltSingle</defName>
+    <label>bed quilt (single)</label>
+    <description>Adds a little extra coziness to any bedroom. Must be placed on a bed. Keep away from open flame.</description>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Furniture</designationCategory>
+    <category>Building</category>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/BedQuiltSingle/BedQuiltSingle</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <uiIconPath>alleZSoyez_TatesTinyFurniture/BedQuiltSingle/BedQuiltSingle_UI</uiIconPath>
+    <statBases>
+      <MaxHitPoints>10</MaxHitPoints>
+      <WorkToBuild>250</WorkToBuild>
+      <Mass>1</Mass>
+      <Flammability>100</Flammability>
+      <Comfort>0.5</Comfort>
+      <Beauty>1</Beauty>
+    </statBases>
+    <passability>Standable</passability>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+      <Cloth>10</Cloth>
+    </costList>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <pathCost>1</pathCost>
+    <staticSunShadowHeight>0.1</staticSunShadowHeight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.35</fillPercent>
+    <building>
+      <isEdifice>false</isEdifice>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+    </building>
+    <size>(1,2)</size>
+    <clearBuildingArea>false</clearBuildingArea>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>1</maxDistance>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>10</heatPerSecond>
+        <heatPushMaxTemperature>10</heatPushMaxTemperature>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>TatesTinyFurnitureMod.PlaceWorker_TTFM_BedQuiltSingle</li>
+    </placeWorkers>
+  </ThingDef>
+  <!--======================BED QUILT (Double)=======================-->
+<ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>TatesTinyFurnitureMod_BedQuiltDouble</defName>
+    <label>bed quilt (double)</label>
+    <description>Adds a little extra coziness to any bedroom. Must be placed on a bed. Keep away from open flame.</description>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>Furniture</designationCategory>
+    <category>Building</category>
+    <graphicData>
+      <texPath>alleZSoyez_TatesTinyFurniture/BedQuiltDouble/BedQuiltDouble</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2.05,2.05)</drawSize>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <uiIconPath>alleZSoyez_TatesTinyFurniture/BedQuiltDouble/BedQuiltDouble_UI</uiIconPath>
+    <statBases>
+      <MaxHitPoints>10</MaxHitPoints>
+      <WorkToBuild>250</WorkToBuild>
+      <Mass>2</Mass>
+      <Flammability>100</Flammability>
+      <Comfort>0.5</Comfort>
+      <Beauty>1</Beauty>
+    </statBases>
+    <passability>Standable</passability>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <costList>
+      <Cloth>20</Cloth>
+    </costList>
+    <techLevel>Medieval</techLevel>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <pathCost>1</pathCost>
+    <staticSunShadowHeight>0.1</staticSunShadowHeight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.35</fillPercent>
+    <building>
+      <isEdifice>false</isEdifice>
+      <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+    </building>
+    <size>(2,2)</size>
+    <clearBuildingArea>false</clearBuildingArea>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>1</maxDistance>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>10</heatPerSecond>
+        <heatPushMaxTemperature>10</heatPushMaxTemperature>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>TatesTinyFurnitureMod.PlaceWorker_TTFM_BedQuiltDouble</li>
+    </placeWorkers>
+  </ThingDef>
+  <!--======================MINIFIED THINGS=======================-->
+  <ThingDef>
+    <defName>MinifiedPicnicBlanket</defName>
+    <label>minified thing</label>
+    <thingClass>TatesTinyFurnitureMod.MinifiedPicnicBlanket</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <!-- for CompForbiddable -->
+    <drawerType>RealtimeOnly</drawerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+
+
+  <ThingDef>
+    <defName>MinifiedMirror</defName>
+    <label>minified thing</label>
+    <thingClass>TatesTinyFurnitureMod.MinifiedMirror</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <!-- for CompForbiddable -->
+    <drawerType>RealtimeOnly</drawerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+
+  <!--======================EXTRA FLOORS=======================-->
+  <TerrainDef ParentName="TileMetalBase">
+    <defName>TTFM_JadeTile</defName>
+    <label>jade tile</label>
+    <renderPrecedence>242</renderPrecedence>
+    <description>Pretty, green, and expensive, these jade tiles are sure to make you feel fancy.</description>
+    <color>(0.28, 0.31, 0.08)</color>
+    <statBases>
+      <Beauty>8</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <costList>
+      <Jade>7</Jade>
+    </costList>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+  </TerrainDef>
+  
+  <TerrainDef ParentName="TileMetalBase">
+    <defName>TTFM_SteampunkTileLight</defName>
+    <label>steampunk tile (light)</label>
+    <renderPrecedence>242</renderPrecedence>
+    <description>Sometimes pure gold is too flashy, but you still want to prove you have money...</description>
+    <color>(0.49, 0.44, 0.31)</color>
+    <statBases>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <costList>
+      <Gold>1</Gold>
+      <Silver>1</Silver>
+      <Steel>5</Steel>
+    </costList>
+    <designationHotKey>Misc3</designationHotKey>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TileMetalBase">
+    <defName>TTFM_SteampunkTileDark</defName>
+    <label>steampunk tile (dark)</label>
+    <renderPrecedence>242</renderPrecedence>
+    <description>For when the room needs something a little gloomier.</description>
+    <color>(0.31, 0.24, 0.16)</color>
+    <statBases>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <costList>
+      <Steel>1</Steel>
+      <Silver>1</Silver>
+      <Uranium>5</Uranium>
+    </costList>
+    <designationHotKey>Misc3</designationHotKey>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+  </TerrainDef>
+
+  <!--======================ACTUALLY MATCHING TILE SETS=======================-->
+
+  <TerrainDef ParentName="TileMetalBase">
+    <defName>TTFM_PlasteelTile</defName>
+    <label>plasteel tile</label>
+    <renderPrecedence>242</renderPrecedence>
+    <description>Plasteel floors with a futuristic and almost sterile teal-colored hue.</description>
+    <color>(0.42, 0.59, 0.59)</color>
+    <statBases>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Cleanliness>0.3</Cleanliness>
+    </statBases>
+    <costList>
+      <Plasteel>7</Plasteel>
+    </costList>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TileMetalBase">
+    <defName>TTFM_UraniumTile</defName>
+    <label>uranium tile</label>
+    <renderPrecedence>242</renderPrecedence>
+    <description>Uranium tile: For when you're feeling radioactive. Or to match your uranium walls, whichever.</description>
+    <color>(0.28, 0.28, 0.28)</color>
+    <statBases>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Cleanliness>0.1</Cleanliness>
+    </statBases>
+    <costList>
+      <Uranium>7</Uranium>
+    </costList>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+  </TerrainDef>
+</Defs>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>	
+	<!--stone chairs-->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef[defName = "DiningChair"]/stuffCategories/li/Stony</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName = "DiningChair"]/stuffCategories</xpath>
+				<value>
+					<li>Stony</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+	<!--make beds compatible with 1x1 dresser-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@ParentName = "BedWithQualityBase" or @ParentName = "ArtableBedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+		<value>
+			<li>TatesTinyFurnitureMod_Dresser</li>
+		</value>
+	</Operation>
+
+        <!--compatibility with bed quilt-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@ParentName = "BedWithQualityBase" or @ParentName = "ArtableBedBase" and size = "(1,2)"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+		
+                <value>
+			<li>TatesTinyFurnitureMod_BedQuiltSingle</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@ParentName = "BedWithQualityBase" or @ParentName = "ArtableBedBase" and size = "(2,2)"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+		
+                <value>
+			<li>TatesTinyFurnitureMod_BedQuiltDouble</li>
+		</value>
+	</Operation>
+
+        <!--if user has Vanilla Extended Furniture installed, use their identical 1x1 shelf instead out of courtesy.
+            however, since the 1x1 tables are different (theirs is smaller), I'll just edit mine a bit.-->
+        <Operation Class="PatchOperationFindMod">
+                <mods>
+                        <li>Vanilla Furniture Expanded</li>
+                </mods>
+                <match Class="PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName = "TatesTinyFurnitureMod_Table"]/label</xpath>
+                        <value>
+                                <label>table (1x1 full)</label>
+                        </value>
+                </match>
+	</Operation>
+
+        <!-- thank you to Neronix17 on Steam for the solution! -->
+        <Operation Class="PatchOperationFindMod">
+                <mods>
+                        <li>Vanilla Furniture Expanded</li>
+                </mods>
+                <match Class="PatchOperationReplace">
+                        <xpath>Defs/ThingDef[defName = "TatesTinyFurnitureMod_Shelf"]/designationCategory</xpath>
+                        <value>
+                                <designationCategory> </designationCategory>
+                        </value>
+                </match>
+	</Operation>
+
+</Patch>

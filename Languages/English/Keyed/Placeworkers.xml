@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <TTFM_CannotObstructFrontOfMirror>Front of mirror cannot be obstructed.</TTFM_CannotObstructFrontOfMirror>
+  <TTFM_MirrorMustBeAboveWall>When facing north, mirror must be placed directly above a wall.</TTFM_MirrorMustBeAboveWall>
+  <TTFM_MirrorMustBeOnWall>Mirror must be placed directly onto wall.</TTFM_MirrorMustBeOnWall>
+  <TTFM_QuiltMustBeOnBed>Quilt must be placed on bed of the same size.</TTFM_QuiltMustBeOnBed>
+  <TTFM_QuiltMustBeSameDirection>Quilt must be facing the same direction as bed.</TTFM_QuiltMustBeSameDirection>
+</LanguageData>
