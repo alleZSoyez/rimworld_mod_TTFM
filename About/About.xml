@@ -7,7 +7,9 @@
         <li>1.5</li>
 	</supportedVersions>
 	<packageId>alleZSoyez.TTFM.TatesTinyFurnitureMod</packageId>
-	<description>Okay, it's not actually that tiny. In fact, I'd even venture to say that it got way out of hand.
+	<description>This version of the mod is for RimWorld 1.5+. For older versions, go here: https://steamcommunity.com/sharedfiles/filedetails/?id=3221519953
+
+Okay, it's not actually that tiny. In fact, I'd even venture to say that it got way out of hand.
 
 Special thanks to greyfade for helping with the mirror AI and other code, Neronix17 for the solution to the VFE mod patch, and *Mythos|GER* for finding an error with GloomyFurniture compatibility.
 
@@ -32,9 +34,7 @@ This mod used to add 1x1 shelves, but they are no longer needed as of 1.5. Exist
 
 Wall mirror is now compatible with GloomyFurniture's walls and smoothed stone walls.
 
-PRIOR BUILDS:
-1.5 changed a lot of code, particularly for the mirror, so this mod isn't really backwards-compatible anymore.
-If you are looking for an earlier build, I put it on GitHub here: https://github.com/alleZSoyez/rimworld_mod_TTFM/releases/tag/v1.1_to_1.4
+A new Steam Workshop page with the old version will be linked here as soon as I have one.
 
 KNOWN ISSUES:
 - Rugs and mats don't yet cover plants. For best results, place on stone terrain or floors only or cut the plants away.
@@ -44,5 +44,8 @@ KNOWN ISSUES:
 DISCLAIMERS:
 - Yes, I'm pretty sure at least some of these items have been made before, and probably done better at that. I wanted to try it anyway as I'm still learning how to create mods.
 - This should be safe to add to an existing save. If you're removing it from a save, make sure to delete all of the furniture from this mod as well as any dining chairs. Please let me know if you find any issues.
+
+SOURCE CODE:
+https://github.com/alleZSoyez/rimworld_mod_TTFM/
 	</description>
 </ModMetaData>
