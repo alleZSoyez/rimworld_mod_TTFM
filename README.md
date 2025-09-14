@@ -5,4 +5,4 @@ Steam pages:
 
 1.5+: https://steamcommunity.com/sharedfiles/filedetails/?id=2247819099
 
-Legavy (1.1 - 1.4): https://steamcommunity.com/sharedfiles/filedetails/?id=3221519953
+Legacy (1.1 - 1.4): https://steamcommunity.com/sharedfiles/filedetails/?id=3221519953
